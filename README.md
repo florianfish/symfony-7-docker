@@ -7,7 +7,16 @@
 - [Composer](https://getcomposer.org/download/)
 
 ## Lancer le projet
-
 ```bash
 docker-compose up
+```
+
+## Accéder au projet
+```bash
+http://127.0.0.1:8080/
+```
+
+## Accéder à phpMyAdmin
+```bash
+http://127.0.0.1:8081/
 ```
