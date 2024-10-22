@@ -1,26 +1,29 @@
+{#
+This is the base template used as the application layout which contains the
+common elements and decorates all the other templates.
+See https://symfony.com/doc/current/templates.html#template-inheritance-and-layouts
+#}
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="view-transition" content="same-origin"/>
+    <title>{% block title %}Symfony Demo application{% endblock %}</title>
 
-        {% block javascripts %}
-{% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-        <style>
+    {#
+    Those two blocks defines frontend entrypoint for CSS and JavaScript assets
+    See https://symfony.com/doc/current/frontend.html
+    #}
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}
+        {% block importmap %}{{ importmap('app') }}{% endblock %}
+    {% endblock %}
+</head>
 
-            body {
-
-                background-color: white;
-
-            }
-
-        </style>
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<body>
+<div class="container body-container">
+    {% block body %}{% endblock %}
+</div>
+</body>
 </html>
