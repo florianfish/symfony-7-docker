@@ -10,16 +10,7 @@ services:
     build: .
     volumes:
       - ./:/code
-  #  mysql:
-  #    image: mysql:8.2
-  #    environment:
-  #      # 🚨 Changer si vous utilisez cette configuration en production
-  #      MYSQL_ROOT_PASSWORD: root # ⬅︎ 🚨
-  #      MYSQL_DATABASE: appdb
-  #      MYSQL_USER: user # ⬅︎ 🚨
-  #      MYSQL_PASSWORD: password # ⬅︎ 🚨
-  #    volumes:
-  #      - data:/var/lib/mysql
+
   mariadb:
     image: mariadb:latest
     environment:
